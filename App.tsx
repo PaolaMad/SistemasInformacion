@@ -1,11 +1,21 @@
 
 import { SafeAreaView } from 'react-native';
-import {HelloWorldScreen} from './src/screens/HelloWorldScreen';
+import { PaperProvider } from 'react-native-paper';
+import IonIcon from 'react-native-vector-icons/Ionicons'
+import { DimensionScreen } from './src/presentation/screens/DimensionScreen';
 
 export const App = () => {
   return (
-  <SafeAreaView style={{flex: 1}}>
-    <HelloWorldScreen />
-  </SafeAreaView>
+    <PaperProvider 
+    settings={{
+      icon: props => <IonIcon {...props} />,
+    }}
+    >
+      <SafeAreaView style={{ flex: 1 }}>
+        <DimensionScreen />
+      </SafeAreaView>
+    </PaperProvider>
+
+
   );
 };
